@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Order Form</title>
+    <link rel="stylesheet" href="Form.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Order Customized T-Shirt</h1>
+        <form>
+            <fieldset>
+                <legend>Customize Your T-Shirt</legend>
+                 
+                <div class="form-group">
+                    <label for="tagline">Tagline on the Shirt:</label>
+                    <input type="text" id="tagline" name="tagline" placeholder="Enter your tagline" required >
+                </div>
+
+                <div class="form-group">
+                    <label for="color">Color:</label>
+                    <select id="color" name="color" required>
+                        <option value="" disabled selected>Select a color</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="size">Size:</label>
+                    <select id="size" name="size" required>
+                        <option value="" disabled selected>Select a size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="xlarge">X-Large</option>
+                        <option value="xxlarge">XX-Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery-date">Delivery Date:</label>
+                    <input type="date" id="delivery-date" name="delivery_date" required>
+                </div>
+
+                <fieldset>
+                    <legend>Delivery Details</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">Recipient's Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" placeholder="Street Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" placeholder="Any special instructions or comments"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" onclick="generateReceipt(event)">Submit Order</button>
+                    <button type="reset">Reset Form</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    
+    <div class="receipt-div">
+        <h2>Receipt</h2>
+        <div class="details">
+            <p id="receiptTagline"></p>
+            <p id="receiptColor"></p>
+            <p id="receiptSize"></p>
+            <p id="receiptQuantity"></p>
+            <p id="receiptDate"></p>
+            <p id="receiptName"></p>
+            <p id="receiptAddress"></p>
+            <p id="receiptEmail"></p>
+            <p id="receiptPhone"></p>
+            <p id="receiptDate"></p>
+        </div>
+        <div class="footer">
+            <p>Thank you for your purchase!</p>
+        </div>
+        <p class="receipt-bottom-message">Please store this receipt before clicking confirm.</p>
+        <button onclick="hidereceipt()">Confirm order</button>
+    </div>
+
+    <div class="order-confirmation">
+        <div class="close-button">&#10006;</div>
+        <p>Congrats,Your order has been confirmed!</p>
+    </div>
+</body>
+
+<script src="form.js"></script>
+</html>
+
+
+
